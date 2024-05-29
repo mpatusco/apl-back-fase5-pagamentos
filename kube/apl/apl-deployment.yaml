@@ -11,13 +11,13 @@ spec:
   template:
     metadata:
 #      annotations:
-#        eks.amazonaws.com/role-arn: arn:aws:iam::231670762225:role/my-app-service-account
+#        eks.amazonaws.com/role-arn: arn:aws:iam::{aws-account}:role/my-app-service-account
       labels:
         app: apl-pagamentos
     spec:
       containers:
         - name: apl-pagamentos
-          image: plobon/fiappagamentos:v2
+          image: pagamentos:v1
           imagePullPolicy: "Always"
           env:
             - name: spring.datasource.initialize
